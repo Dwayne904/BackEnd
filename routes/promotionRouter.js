@@ -19,7 +19,7 @@ promotionRouter
     res.end('PUT operation not supported on /promotion');
 })
 .delete((req, res) => {
-    res.end('Deleting all promotionIds');
+    res.end('Deleting all promotions');
 });
 
 // new method 
@@ -36,15 +36,15 @@ promotionRouter
 })
 .post((req, res) => {
     res.statusCode = 403;
-    res.end(`POST operation not supported on /campsites/${req.params.promotionId}`);
+    res.end(`POST operation not supported on /promotions/${req.params.promotionId}`);
 })
 .put((req, res) => {
-    res.write(`Updating the campsite: ${req.params.promotionId}\n`);
-    res.end(`Will update the campsite: ${req.body.name}
+    res.write(`Updating the promotion: ${req.params.promotionId}\n`);
+    res.end(`Will update the promotion: ${req.body.name}
         with description: ${req.body.description}`);
 })
 .delete((req, res) => {
-    res.end(`Deleting campsite: ${req.params.promotionId}`);
+    res.end(`Deleting promotion: ${req.params.promotionId}`);
 });
 
 module.exports = promotionRouter;
